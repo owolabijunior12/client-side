@@ -1,4 +1,4 @@
-export const initialState ={
+ export const initialState ={
     user:null,
     playlist: [],
     playing:false,
@@ -11,9 +11,9 @@ const reducer =(state, action)=>{
             return{
                 ...state,
                 user:action.user
-            }
+            };
             default:
-                return state
+                return state;
     }
 }
 export default reducer

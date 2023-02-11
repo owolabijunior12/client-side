@@ -1,14 +1,16 @@
 .login{
     display: grid;
     place-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    max-height: auto;
     background: #000;
 }
 .login img {
     height: 100px;
+    border-radius: 30px;
 }
-.login a{
-    margin: 20px;
+/*.login a{
+     margin: 20px;
     padding:10px 50px;
     color: #fff;
     font-weight: bold;
@@ -16,7 +18,7 @@
     background: #920ea693;
     border-radius: 10px;
     text-decoration: none;
-}
+} */
 form{
     color: #fff;
     display: grid;
@@ -45,4 +47,22 @@ form input{
     border-bottom: #848484 solid 1px;
     border-radius: 10px;
     color:#848484;
+}
+form span{
+    text-align: center;
+}
+form button{
+    margin: 20px;
+    padding:10px 50px;
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid #000;
+    background: #920ea693;
+    border-radius: 10px;
+    margin: 20px 30px;
+    text-decoration: none;
+}
+form button a{
+    text-decoration: none;
+    color: #fff;
 }

@@ -16,7 +16,22 @@ function Login() {
                 <div className="from-control">
                       <label >UserName</label>
                       <input type='text' placeholder="UserName"/>
-                      <small className="err">hee</small>
+                      <small className="err">username cannot be empty</small>
+                </div>
+                <div className="from-control">
+                      <label >Full Name</label>
+                      <input type='text' placeholder="Full Name"/>
+                      <small className="err">full name cannot be empty</small>
+                </div>
+                <div className="from-control">
+                      <label >Password</label>
+                      <input type='password' placeholder="Password"/>
+                      <small className="err">password can not be empty</small>
+                </div>
+                <div className="from-control">
+                      <label >Comfirm Password</label>
+                      <input type='password' placeholder="CmPassword" />
+                      <small className="err">password is not corresponing to the password created</small>
                 </div>
           </form>
       </div>

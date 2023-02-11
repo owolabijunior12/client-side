@@ -1,9 +1,21 @@
 import React from 'react'
-
+import Footer from './footer'
+// import LeftSide from './leftside'
+import Header from './header'
+import '../style/Player.css'
+import SideBar from './sidebar'
+import Lysic from './lysic'
 function Player() {
   return (
-    <div>
-      e
+    <div className='Player'>
+      <div className='Player__body'>
+            <SideBar/>
+            <div >
+                  <Header/>
+                  <Lysic/>
+            </div>
+      </div>
+      <Footer/>
     </div>
   )
 }

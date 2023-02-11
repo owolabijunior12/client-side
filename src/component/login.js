@@ -76,7 +76,7 @@ function Login() {
                 {errors.password && <p>Please check the Password</p>}
                 {/* {errors.comfirmpassword && <p>Please check the Password</p>} */}
                 <Button type='submit'><a href={accessUrl}>Register</a></Button>
-                <span>Already have an account!  <a href="">Login</a></span>    
+                <small>Already have an account!  <a href="">Login</a></small>    
             </Form>
       </div>
     </div>

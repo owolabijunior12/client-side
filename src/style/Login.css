@@ -5,7 +5,7 @@
     background: #000;
 }
 .login img {
-    height: 300px;
+    height: 100px;
 }
 .login a{
     margin: 20px;
@@ -16,4 +16,32 @@
     background: #920ea693;
     border-radius: 10px;
     text-decoration: none;
+}
+.from-control{
+    color: #fff;
+    display: grid;
+    /* position: relative; */
+    font-size: 14px;
+}
+.from-control small{
+    color: #ff0202;
+    font-style: italic;
+    float:right;
+    /* position: absolute; */
+    font-weight:600;
+}
+.from-control label{
+    color: #848484;
+    font-weight: bold;
+    grid-column: 1 / span 2;
+}
+.from-control input{
+    width: 100%;
+    margin:9px 0;
+    padding: 10px;
+    border: none;
+    background: #000;
+    border-bottom: #848484 solid 1px;
+    border-radius: 10px;
+    color:#848484;
 }

@@ -12,7 +12,13 @@ function Login() {
         alt=""
       /> 
       <div>
-        
+          <form>
+                <div className="from-control">
+                      <label >UserName</label>
+                      <input type='text' placeholder="UserName"/>
+                      <small className="err">hee</small>
+                </div>
+          </form>
       </div>
        <a href={accessUrl}>LOGIN </a>
     </div>

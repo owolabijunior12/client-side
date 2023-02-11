@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
+import Login from './component/login';
+// import Player from './component/Player';
+import { getTokenFromResponse } from './component/sportify';
+//import SpotifyWebApi from 'spotify-web-api-js'
 import './App.css';
+// import { useDataLayerValue } from './DataLayer';
+
+// const spotify  = new SpotifyWebApi();
+
 
 function App() {
+  const [token, setToken] =useState(null);
+  // const [{ user }, dispatch ]=useDataLayerValue();
+  useEffect(()=>{
+    const hash= getTokenFromResponse();
+    window.location.hash='';
+    const _token  = hash.access_token;
+   
+    if (_token) {
+      setToken(_token);
+      // spotify.setAccessToken(_token);
+      // spotify.getMe().then(user =>{
+      // console.log(user);
+      // dispatch({
+      //   type: "SET_USER",
+      //   user:user
+      // });  
+      // });
+    }
+     console.log('I have a token', token);
+  },[]);
+  // console.log(user);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        {
+      token?
+      (
+        // <Player/>    
+        <h1>im logged in </h1>    
+        ):(
+        <Login/>
+        )}
     </div>
-  );
+  )
 }
 
-export default App;
+
+export default App

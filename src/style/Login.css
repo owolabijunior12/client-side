@@ -17,25 +17,26 @@
     border-radius: 10px;
     text-decoration: none;
 }
-.from-control{
+form{
     color: #fff;
     display: grid;
     /* position: relative; */
     font-size: 14px;
 }
-.from-control small{
+form p{
     color: #ff0202;
     font-style: italic;
     float:right;
     /* position: absolute; */
     font-weight:600;
 }
-.from-control label{
+f
+form label{
     color: #848484;
     font-weight: bold;
     /* grid-column: 2 / span 2; */
 }
-.from-control input{
+form input{
     width: 100%;
     margin:9px 0;
     padding: 10px;

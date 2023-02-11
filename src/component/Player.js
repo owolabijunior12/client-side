@@ -10,7 +10,7 @@ function Player() {
     <div className='Player'>
       <div className='Player__body'>
             <SideBar/>
-            <div >
+            <div  className='body'>
                   <Header/>
                   <Lysic/>
             </div>

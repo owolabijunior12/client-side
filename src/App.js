@@ -1,9 +1,9 @@
 import './App.css';
 import {useEffect, useState} from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { getTokenFromResponse } from './component/sportify';
 import SpotifyWebApi from 'spotify-web-api-js'
-import { accessUrl } from './component/sportify';
+// import { accessUrl } from './component/sportify';
 import Login from './component/login';
 import Player from './component/Player';
 

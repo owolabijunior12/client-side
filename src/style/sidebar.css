@@ -1,9 +1,22 @@
 .SlideBar{
     border:  1px solid #000;
-    min-height: 230px;
+    min-height: 430px;
     height: 100vh;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     flex: 0.2;
     background: #000;
-    color: #ff;
+    color:#242424;
+}
+.SlideBar .SlideBar-img{
+    height: 70px;
+}
+.SlideBar hr{
+    width: 90%;
+
+}
+.SlideBar strong{
+    text-align: left;
+}
+.sidebar_title{
+    font-size: 20px;
 }

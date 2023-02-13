@@ -3,7 +3,10 @@ import '../style/footer.css'
 function Footer() {
   return (
     <div className='footer'>
-       im the Footer
+          <div className='footer_left'>
+
+          </div>
+
     </div>
   )
 }

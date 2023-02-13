@@ -7,16 +7,29 @@ import "../style/Login.css";
 import { accessUrl } from "./sportify.js";
 
 function Login() {
+    // const [token, setToken] = useState("");
       const { register, handleSubmit, formState: { errors } } = useForm();
       const onSubmit = (data) => {
           console.log(data);
       }
+    // const logout = () => {
+    //     setToken("")
+    //     window.localStorage.removeItem("token")
+    // }
   return (
     <div className="login">
       <img
        src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSV5E74Dd_xq7-nf_PqIY97aWqynfqV1_fIQ&usqp=CAU'
        alt=""
       /> 
+       {/* <header className="App-header">
+              
+              <h1>Spotify React</h1>
+               {!token ?
+                   <a href={accessUrl}>Login
+                       to Spotify</a>
+                   : <button onClick={logout}>Logout</button>}
+           </header> */}
       <div>
              <Form onSubmit={handleSubmit(onSubmit)}>
                 <Form.Field>
@@ -74,11 +87,11 @@ function Login() {
                     />
                 </Form.Field>
                 {errors.password && <p>Please check the Password</p>}
-                {/* {errors.comfirmpassword && <p>Please check the Password</p>} */}
+                {errors.comfirmpassword && <p>Please check the Password</p>}
                 <Button type='submit'><a href={accessUrl}>Register</a></Button>
                 <small>Already have an account!  <a href="">Login</a></small>    
             </Form>
-      </div>
+      </div> 
     </div>
   );
 }

@@ -1,12 +1,66 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../style/sidebar.css'
+import SpotifyWebApi from "spotify-web-api-js";
 import HomeIcon from '@mui/icons-material/Home';
 // import  AiOutlineSearch from 'react-Icons/ai'
 // import  BiHomeAlt from 'react-Icons/bi'
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import SearchIcon from '@mui/icons-material/Search';
 import SideBarOption from './SideBarOption';
+import { getTokenFromResponse } from "../component/sportify";
+import {useDataLayerValue } from '../DataLayer'
+const s = new SpotifyWebApi();
+
 function SlideBar() {
+  const [{ token }, dispatch] = useDataLayerValue();
+  useEffect(() => {
+    // Set token
+    const hash = getTokenFromResponse();
+    window.location.hash = "";
+    let _token = hash.access_token;
+
+    if (_token) {
+      s.setAccessToken(_token);
+
+      dispatch({
+        type: "SET_TOKEN",
+        token: _token,
+      });
+
+      s.getPlaylist("37i9dQZEVXcJZyENOWUFo7").then((response) =>
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        })
+      );
+
+      s.getMyTopArtists().then((response) =>
+        dispatch({
+          type: "SET_TOP_ARTISTS",
+          top_artists: response,
+        })
+      );
+
+      dispatch({
+        type: "SET_SPOTIFY",
+        spotify: s,
+      });
+
+      s.getMe().then((user) => {
+        dispatch({
+          type: "SET_USER",
+          user,
+        });
+      });
+
+      s.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists,
+        });
+      });
+    }
+  }, [token, dispatch]);
   return (
     <div className='SlideBar'>
       <img
@@ -20,9 +74,13 @@ function SlideBar() {
     <br/>
     <strong className='sidebar_title'>PLAYLISTS</strong>
     <hr/>
-    <SideBarOption  title='Hip-hop'/>
+
+  {/* {playists?.items?.map(playists =>{
+          <SideBarOption title={playists.name}/>
+  })} */}
+    {/* <SideBarOption  title='Hip-hop'/>
     <SideBarOption title='Rock' />
-    <SideBarOption title='RNB' />
+    <SideBarOption title='RNB' /> */}
 
     </div>
   )

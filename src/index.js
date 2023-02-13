@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-// import {initialState} from './reducer'
-// import { DataLayer } from './DataLayer';
-// import reducer from './reducer';
+// import reducer,{initialState} from "./component/reducer"
 import reportWebVitals from './reportWebVitals';
+// import { initialState } from './component/reducer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <React.StrictMode 
+  // initialState={initialState} reducer={reducer}
+  >
     {/* <DataLayer
      initialState ={initialState}
       reducer ={reducer}
